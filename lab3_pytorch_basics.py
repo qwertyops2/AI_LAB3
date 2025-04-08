@@ -269,7 +269,7 @@ print('\nОшибка (количество несовпавших ответо�
 print(err)
 
 # Задание 1 (6 вар)
-t = torch.rand(5, 3, dtype=torch.float32)
+t = torch.rand(5, 3, dtype=torch.float32, requires_grad=True)
 print("t:")
 print(t)
 
@@ -285,8 +285,6 @@ print(t_mul, rand)
 t_exp = t_mul.exp()
 print("\nexp(t^3 * rand):")
 print(t_exp)
-
-t_exp.requires_grad = True
 
 t_exp.sum().backward() 
 
